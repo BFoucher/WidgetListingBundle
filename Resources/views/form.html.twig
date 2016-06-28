@@ -1,5 +1,5 @@
 {% if entity != null %}
-    <div id="picker-{{entity}}-{{ form.mode.vars.data }}" class="vic-tab-pane {% if form.mode.vars.data == 'entity' %}vic-active{% endif %}">
+    <div id="picker-{{entity}}-{{ quantum }}-{{ form.mode.vars.data }}" class="vic-tab-pane {% if form.mode.vars.data == 'entity' %}vic-active{% endif %}">
         {{ form_start(form) }}
             {% if form.mode.vars.data == 'entity' %}
                 <a href="#" onclick='addItemEntityForm("{{ form.items.vars.attr.id }}")' class="vic-btn vic-btn-add" class="vic-btn vic-btn-add add-request-block">{{ 'widget.form.WidgetListingItemType.addItem.label'|trans({}, 'victoire') }}</a>
@@ -15,7 +15,7 @@
         {{ form_end(form) }}
     </div>
 {% else %}
-    <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
+    <div id="picker-{{ quantum }}-{{ form.mode.vars.data }}" class="vic-tab-pane vic-active">
         {{ form_start(form) }}
         <a href="#" onclick='addItemStaticForm()' class="vic-btn vic-btn-add" class="vic-btn vic-btn-add add-request-block">{{ 'widget.form.WidgetListingItemType.addItem.label'|trans({}, 'victoire') }}</a>
         {# It could be simpler here but this is done in order to give an example to implementations with more complicated forms #}
